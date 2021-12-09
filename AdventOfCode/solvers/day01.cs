@@ -9,16 +9,17 @@ namespace AdventOfCode.solvers
     public class day01
     {
 
-        static string[] lines = File.ReadAllLines(@"../../../Inputs/input_day01.txt");
+        string[] lines = File.ReadAllLines(@"../../../Inputs/input_day01.txt");
 
         
 
-        public static void Part1()
+        public void Part1()
         {
             int lastValue = 0;
             int currentValue = int.Parse(lines[0]);
 
             int counter = 0;
+
             for (int i = 1; i<lines.Length; i++)
             {
 
@@ -35,10 +36,38 @@ namespace AdventOfCode.solvers
             Console.WriteLine("Part 1 = " + counter);
         }
 
-        public static void Part2()
+        public void Part2()
         {
 
-            Console.WriteLine("Part 2 = ");
+            int lastValue = 0;
+            int currentValue = int.Parse(lines[0]) + int.Parse(lines[1]) + int.Parse(lines[2]);
+
+            int value1;
+            int value2;
+            int value3;
+
+            int counter = 0;
+
+
+            for (int i = 2; i < lines.Length; i++)
+            {
+
+                if (currentValue > lastValue)
+                {
+                    counter++;
+                }
+
+                value1 = int.Parse(lines[i]);
+                value2 = int.Parse(lines[i-1]);
+                value3 = int.Parse(lines[i-2]);
+
+                lastValue = currentValue;
+                currentValue = value1 + value2 + value3;
+                //Console.WriteLine("Part 2 = " + currentValue);
+            }
+
+
+            Console.WriteLine("Part 2 = " + counter);
         }
 
 
