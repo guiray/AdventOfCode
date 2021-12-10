@@ -8,15 +8,23 @@ namespace AdventOfCode.solvers
 {
     public class day01
     {
+        string[] linesStr;
+        int[] lines;
 
-        string[] lines = File.ReadAllLines(@"../../../Inputs/input_day01.txt");
 
-        
+
+        public day01()
+        {
+            linesStr = File.ReadAllLines(@"../../../Inputs/input_day01.txt");
+
+            lines = Array.ConvertAll(linesStr, int.Parse);
+        }
+
 
         public void Part1()
         {
             int lastValue = 0;
-            int currentValue = int.Parse(lines[0]);
+            int currentValue = lines[0];
 
             int counter = 0;
 
@@ -29,7 +37,7 @@ namespace AdventOfCode.solvers
                 }
 
                 lastValue = currentValue;
-                currentValue = int.Parse(lines[i]);
+                currentValue = lines[i];
 
             }
 
@@ -40,11 +48,7 @@ namespace AdventOfCode.solvers
         {
 
             int lastValue = 0;
-            int currentValue = int.Parse(lines[0]) + int.Parse(lines[1]) + int.Parse(lines[2]);
-
-            int value1;
-            int value2;
-            int value3;
+            int currentValue = lines[0] + lines[1] + lines[2];
 
             int counter = 0;
 
@@ -57,12 +61,8 @@ namespace AdventOfCode.solvers
                     counter++;
                 }
 
-                value1 = int.Parse(lines[i]);
-                value2 = int.Parse(lines[i-1]);
-                value3 = int.Parse(lines[i-2]);
-
                 lastValue = currentValue;
-                currentValue = value1 + value2 + value3;
+                currentValue = lines[i] + lines[i - 1] + lines[i - 2];
                 //Console.WriteLine("Part 2 = " + currentValue);
             }
 

@@ -1,9 +1,9 @@
 ﻿using AdventOfCode.solvers;
 
+var currentDay = new day01();
 
 
+currentDay.Part1();
 
-day01.Part1();
-
-day01.Part2();
+currentDay.Part2();
 
