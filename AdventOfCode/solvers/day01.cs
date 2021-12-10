@@ -8,10 +8,8 @@ namespace AdventOfCode.solvers
 {
     public class day01
     {
-        string[] linesStr;
-        int[] lines;
-
-
+        private string[] linesStr;
+        private int[] lines;
 
         public day01()
         {
@@ -19,7 +17,6 @@ namespace AdventOfCode.solvers
 
             lines = Array.ConvertAll(linesStr, int.Parse);
         }
-
 
         public void Part1()
         {
@@ -52,7 +49,6 @@ namespace AdventOfCode.solvers
 
             int counter = 0;
 
-
             for (int i = 2; i < lines.Length; i++)
             {
 
@@ -63,13 +59,10 @@ namespace AdventOfCode.solvers
 
                 lastValue = currentValue;
                 currentValue = lines[i] + lines[i - 1] + lines[i - 2];
-                //Console.WriteLine("Part 2 = " + currentValue);
             }
-
 
             Console.WriteLine("Part 2 = " + counter);
         }
-
 
     }
 }
