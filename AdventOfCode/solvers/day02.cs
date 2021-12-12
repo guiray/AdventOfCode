@@ -56,6 +56,31 @@ namespace AdventOfCode.solvers
 
         }
 
+        public void Part2()
+        {
+            int horizontalPos = 0;
+            int depth = 0;
+            int aim = 0;
 
+            for (int i = 0; i < linesStr.Length; i++)
+            {
+                if (commands[i] == "forward")
+                {
+                    horizontalPos += commandValues[i];
+                    depth += (aim * commandValues[i]);
+                }
+                else if (commands[i] == "up")
+                {
+                    aim -= commandValues[i];
+                }
+                else if (commands[i] == "down")
+                {
+                    aim += commandValues[i];
+                }
+            }
+
+            Console.WriteLine("Part 2 = " + (depth * horizontalPos));
+
+        }
     }
 }
