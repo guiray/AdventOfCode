@@ -60,6 +60,9 @@ namespace AdventOfCode.solvers
 
         public void Part2()
         {
+            
+
+            
             Console.WriteLine("Part 2 = ");
         }
 
