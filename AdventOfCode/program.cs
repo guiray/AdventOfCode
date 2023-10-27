@@ -1,6 +1,6 @@
-﻿using AdventOfCode.solvers;
+﻿using AdventOfCode2021.solvers;
 
-var currentDay = new day03();
+var currentDay = new day01();
 
 currentDay.Part1();
 

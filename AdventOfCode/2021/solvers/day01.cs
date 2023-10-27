@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AdventOfCode.solvers
+namespace AdventOfCode2021.solvers
 {
     public class day01
     {
@@ -13,7 +13,7 @@ namespace AdventOfCode.solvers
 
         public day01()
         {
-            linesStr = File.ReadAllLines(@"../../../Inputs/input_day01.txt");
+            linesStr = File.ReadAllLines(@"../../../2021/Inputs/input_day01.txt");
 
             lines = Array.ConvertAll(linesStr, int.Parse);
         }
