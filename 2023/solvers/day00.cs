@@ -1,16 +1,12 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace AdventOfCode2023.solvers;
+namespace AdventOfCode2023;
 
-public class day00
+public class Day00
 {
     private string[] linesStr;
 
-    public day00()
+    public Day00()
     {
         linesStr = File.ReadAllLines(@"../../../2023/inputs/input_day00.txt");
     }
