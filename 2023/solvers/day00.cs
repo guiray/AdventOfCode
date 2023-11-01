@@ -9,7 +9,7 @@ public class Day00 : Base
 
     public Day00()
     {
-        // simply to test i
+        // simply to test
         Console.WriteLine(linesStr.Length);
     }
 
