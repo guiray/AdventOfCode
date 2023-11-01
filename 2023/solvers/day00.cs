@@ -5,7 +5,7 @@ namespace AdventOfCode2023;
 public class Day00 : Base
 {
     // day ID
-    public override string CurrentDay => "00";
+    public override int CurrentDay => 0;
 
     public Day00()
     {

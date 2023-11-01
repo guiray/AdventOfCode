@@ -5,7 +5,7 @@ namespace AdventOfCode2023;
 public abstract class Base 
 {
     // get day ID
-    public abstract string CurrentDay { get; }
+    public abstract int CurrentDay { get; }
 
     // input file access for other classes
     protected string[] linesStr;
