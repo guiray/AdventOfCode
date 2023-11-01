@@ -8,7 +8,7 @@ public class Day00
 
     public Day00()
     {
-        linesStr = File.ReadAllLines(@"../../../2023/inputs/input_day00.txt");
+        linesStr = File.ReadAllLines("../../../2023/inputs/input_day00.txt");
     }
 
     public void Part1()
