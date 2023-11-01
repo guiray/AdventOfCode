@@ -2,13 +2,15 @@ using System;
 
 namespace AdventOfCode2023;
 
-public class Day00
+public class Day00 : Base
 {
-    private string[] linesStr;
+    // day ID
+    public override string CurrentDay => "00";
 
     public Day00()
     {
-        linesStr = File.ReadAllLines("../../../2023/inputs/input_day00.txt");
+        // simply to test i
+        Console.WriteLine(linesStr.Length);
     }
 
     public void Part1()
