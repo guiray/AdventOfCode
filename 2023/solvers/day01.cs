@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 
 namespace AdventOfCode2023;
 
@@ -9,15 +10,40 @@ public class Day01 : Base
 
     public Day01()
     {
-        // simply to test
-        Console.WriteLine(linesStr.Length);
+        
     }
 
     public void Part1()
     {
+        string firstDigit = "";
+        string lastDigit = "";
 
+        int total = 0;
 
-        Console.WriteLine("Part 1 = ");
+        for (int i = 0; i < linesStr.Length; i++)
+        {
+            // current line in an char array
+            char[] currentLine = linesStr[i].ToCharArray();
+            
+            for (int j = 0; j < currentLine.Length; j++)
+            {
+                char currentCharacter = currentLine[j];
+
+                // check if current char is a number
+                if (char.IsNumber(currentCharacter))
+                {
+                    if (firstDigit == "")
+                    {
+                        firstDigit = currentCharacter.ToString();
+                    }
+                    lastDigit = currentCharacter.ToString();
+                }
+            }
+            total += Int32.Parse(firstDigit + lastDigit);
+            firstDigit = "";
+        }
+
+        Console.WriteLine("Part 1 = " + total);
     }
 
     public void Part2()
