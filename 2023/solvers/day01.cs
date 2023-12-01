@@ -46,11 +46,79 @@ public class Day01 : Base
         Console.WriteLine("Part 1 = " + total);
     }
 
+
     public void Part2()
     {
+        string firstDigit = "";
+        string lastDigit = "";
+        int total = 0;
+
+        string[] wordNumbers = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+
+        for (int i = 0; i < linesStr.Length; i++)
+        {
+            string currentLine = linesStr[i];
+
+            int firstIndex = -1;
+            int lastIndex = -1;
+
+            for (int j = 0; j < wordNumbers.Length; j++)
+            {
+                int currentIndex = -1;
+
+                if (currentLine.Contains(wordNumbers[j]))
+                {
+                    currentIndex = currentLine.IndexOf(wordNumbers[j]);
+                    if (firstIndex < 0)
+                    {
+                        firstIndex = currentIndex;
+                    }
+                    if (lastIndex < 0)
+                    {
+                        lastIndex = currentIndex;
+                    }
+                }
+                else if (currentLine.Contains((j + 1).ToString()))
+                {
+                    currentIndex = currentLine.IndexOf((j + 1).ToString());
+                    if (firstIndex < 0)
+                    {
+                        firstIndex = currentIndex;
+                        if (firstIndex < 0)
+                        {
+                            firstIndex = currentIndex;
+                        }
+                        if (lastIndex < 0)
+                        {
+                            lastIndex = currentIndex;
+                        }
+                    }
+                }
+
+                if (currentIndex < firstIndex)
+                {
+                    firstIndex = currentIndex;
+                    firstDigit = (j+1).ToString();
+                }
+                else if (currentIndex > lastIndex)
+                {
+                    lastIndex = currentIndex;
+                    lastDigit = (j+1).ToString();
+                }
+                
+                
+
+                Console.WriteLine("current word" + wordNumbers[j] +"first: " + firstDigit + " Last: "+ lastDigit);
+            }
+            
 
 
-        Console.WriteLine("Part 2 = ");
+            total += Int32.Parse(firstDigit + lastDigit);
+            firstDigit = "";
+        }
+
+
+        Console.WriteLine("Part 2 = " + total);
     }
 
 }
