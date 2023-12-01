@@ -2,12 +2,12 @@ using System;
 
 namespace AdventOfCode2023;
 
-public class Day00 : Base
+public class Day01 : Base
 {
     // day ID
     public override string CurrentDay => this.GetType().Name;
 
-    public Day00()
+    public Day01()
     {
         // simply to test
         Console.WriteLine(linesStr.Length);
