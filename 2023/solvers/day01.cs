@@ -15,8 +15,8 @@ public class Day01 : Base
 
     public void Part1()
     {
-        string firstDigit = "";
-        string lastDigit = "";
+        int firstDigit = 0;
+        int lastDigit = 0;
 
         int total = 0;
 
@@ -32,15 +32,15 @@ public class Day01 : Base
                 // check if current char is a number
                 if (char.IsNumber(currentCharacter))
                 {
-                    if (firstDigit == "")
+                    if (firstDigit == 0)
                     {
-                        firstDigit = currentCharacter.ToString();
+                        firstDigit = (int)Char.GetNumericValue(currentCharacter);
                     }
-                    lastDigit = currentCharacter.ToString();
+                    lastDigit = (int)Char.GetNumericValue(currentCharacter);
                 }
             }
-            total += Int32.Parse(firstDigit + lastDigit);
-            firstDigit = "";
+            total += (firstDigit * 10) + lastDigit;
+            firstDigit = 0;
         }
 
         Console.WriteLine("Part 1 = " + total);
@@ -108,7 +108,7 @@ public class Day01 : Base
                 
                 
 
-                Console.WriteLine("current word" + wordNumbers[j] +"first: " + firstDigit + " Last: "+ lastDigit);
+                Console.WriteLine("current word " + wordNumbers[j] +" first: " + firstDigit + " Last: "+ lastDigit);
             }
             
 
