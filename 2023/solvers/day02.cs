@@ -5,7 +5,7 @@ namespace AdventOfCode2023;
 public class Day02 : Base
 {
     // day ID
-    public override string CurrentDay => this.GetType().Name;
+    //public override string CurrentDay => this.GetType().Name;
 
     public Day02()
     {
