@@ -53,16 +53,21 @@ public class Day01 : Base
         string lastDigit = "";
         int total = 0;
 
-        string[] wordNumbers = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+        string[] wordNumbers = { "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
         for (int i = 0; i < linesStr.Length; i++)
         {
             string currentLine = linesStr[i];
 
+            foreach (char s in currentLine)
+            {
+                Console.WriteLine(currentLine[3]);
+            }
+
             int firstIndex = -1;
             int lastIndex = -1;
 
-            for (int j = 0; j < wordNumbers.Length; j++)
+            /*for (int j = 0; j < wordNumbers.Length; j++)
             {
                 int currentIndex = -1;
 
@@ -114,7 +119,7 @@ public class Day01 : Base
 
 
             total += Int32.Parse(firstDigit + lastDigit);
-            firstDigit = "";
+            firstDigit = "";*/
         }
 
 

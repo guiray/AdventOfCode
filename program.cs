@@ -1,6 +1,6 @@
 ﻿using AdventOfCode2023;
 
-var currentDay = new Day01();
+var currentDay = new Day02();
 
 currentDay.Part1();
 
